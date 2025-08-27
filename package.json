@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.11.0",
     "ramda": "^0.31.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -17,6 +18,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",
+    "@types/axios": "^0.14.4",
+    "@types/ramda": "^0.31.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react-swc": "^4.0.0",
