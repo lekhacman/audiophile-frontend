@@ -11,7 +11,7 @@ import http from "./http.js";
  * @return {Promise<Array<Asset>>}
  */
 export function list() {
-  return http.get("/v1/assets");
+  return http.get("/v1/asset");
 }
 
 /**
@@ -21,5 +21,5 @@ export function list() {
 export function upload(file) {
   const formData = new FormData();
   formData.append("myFile", file);
-  return http.post("/v1/assets", formData);
+  return http.post("/v1/asset", formData);
 }
