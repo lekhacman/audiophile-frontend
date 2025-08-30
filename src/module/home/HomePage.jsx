@@ -1,21 +1,18 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { getSystemHealth } from "../../api";
+import { useLoaderData } from "react-router";
+import CreateRootUser from "../auth/CreateRootUser.jsx";
 
 export default function HomePage() {
-  const [msg, setMsg] = useState("");
-  useEffect(() => {
-    axios
-      .get("/api/health")
-      .then(({ data }) => setMsg(data.msg))
-      .catch((e) => {
-        console.log(e);
-        setMsg("Server is down!");
-      });
-  }, []);
+  const { msg, pristine } = useLoaderData();
   return (
     <div>
-      <h1>Hello World!</h1>
+      <h1>Audiophile</h1>
       <p>{msg}</p>
+      {pristine && <CreateRootUser />}
     </div>
   );
 }
+
+HomePage.loader = function () {
+  return getSystemHealth();
+};
